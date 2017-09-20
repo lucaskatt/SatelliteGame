@@ -10,7 +10,7 @@ public class Satellite : Matter {
 
     private bool isThrusting = false;
     private float currentIncrement = 0;
-    private Direction lastDir = Direction.none;
+    private Direction lastDir = Direction.right;
 
 	// Use this for initialization
 	override protected void Start () {
@@ -48,7 +48,6 @@ public class Satellite : Matter {
         else
         {
             base.FixedUpdate();
-            isThrusting = false;
         }
     }
 
@@ -59,6 +58,10 @@ public class Satellite : Matter {
         if (lastDir != dir)
         {
             isThrusting = false;
+        }
+        else
+        {
+            isThrusting = true;
         }
         lastDir = dir;
 
@@ -85,12 +88,12 @@ public class Satellite : Matter {
         {
             body.velocity = heading * thrusterInitialVel;
             currentIncrement = 0;
-            isThrusting = true;
         }
         else
         {
-            currentIncrement += thrusterIncrement;
-            body.velocity = heading * thrusterInitialVel + heading * currentIncrement;
+            //currentIncrement += thrusterIncrement;
+            //body.velocity = heading * thrusterInitialVel + heading * currentIncrement;
+            body.velocity = body.velocity.magnitude * heading + heading * thrusterIncrement;
         }
     }
 
@@ -100,7 +103,6 @@ public class Satellite : Matter {
         right,
         up,
         down,
-        none
     }
 
 }
