@@ -16,7 +16,7 @@ public class Satellite : Matter {
 	override protected void Start () {
         base.Start();
         FacePlanet();
-        body.velocity = Vector2.right * initialVelocity;
+        body.velocity = transform.right * initialVelocity;
 	}
 	
 	// Update is called once per frame
