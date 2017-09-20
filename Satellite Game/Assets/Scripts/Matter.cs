@@ -31,4 +31,9 @@ public class Matter : MonoBehaviour {
         float dist = Vector2.Distance(transform.position, planet.transform.position);
         return gravConst * body.mass * planet.mass / (dist);
     }
+
+    protected void FacePlanet()
+    {
+        transform.up = -1 * (planet.transform.position - transform.position);
+    }
 }

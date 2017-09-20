@@ -5,49 +5,62 @@ using UnityEngine;
 public class Satellite : Matter {
 
     public float initialVelocity;
-    public float thrusterForce;
+    public float thrusterInitialVel;
+    public float thrusterIncrement;
 
-    private float escapeVelocity;
+    private bool isThrusting = false;
+    private float currentIncrement = 0;
+    private Direction lastDir = Direction.none;
 
 	// Use this for initialization
 	override protected void Start () {
         base.Start();
+        FacePlanet();
         body.velocity = Vector2.right * initialVelocity;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.up = -1 * (planet.transform.position - transform.position);
+        FacePlanet();
 	}
 
     protected override void FixedUpdate()
     {
-        base.FixedUpdate();
-
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            Thrust(Direction.right);
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                Thrust(Direction.right);
+            }
+            if (Input.GetAxis("Horizontal") < 0)
+            {
+                Thrust(Direction.left);
+            }
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                Thrust(Direction.up);
+            }
+            if (Input.GetAxis("Vertical") < 0)
+            {
+                Thrust(Direction.down);
+            }
         }
-        if (Input.GetAxis("Horizontal") < 0)
+        else
         {
-            Thrust(Direction.left);
+            base.FixedUpdate();
+            isThrusting = false;
         }
-        if (Input.GetAxis("Vertical") > 0)
-        {
-            Thrust(Direction.up);
-        }
-        if (Input.GetAxis("Vertical") < 0)
-        {
-            Thrust(Direction.down);
-        }
-
-        escapeVelocity = CalculateEscapeVelocity();
-        
     }
 
     public void Thrust(Direction dir)
     {
         Vector2 heading;
+
+        if (lastDir != dir)
+        {
+            isThrusting = false;
+        }
+        lastDir = dir;
 
         switch (dir)
         {
@@ -68,14 +81,17 @@ public class Satellite : Matter {
                 break;
         }
 
-        body.AddForce(heading * thrusterForce);
-
-    }
-
-    //need to set max velocity
-    private float CalculateEscapeVelocity()
-    {
-        return 0;
+        if (!isThrusting)
+        {
+            body.velocity = heading * thrusterInitialVel;
+            currentIncrement = 0;
+            isThrusting = true;
+        }
+        else
+        {
+            currentIncrement += thrusterIncrement;
+            body.velocity = heading * thrusterInitialVel + heading * currentIncrement;
+        }
     }
 
     public enum Direction
@@ -83,7 +99,8 @@ public class Satellite : Matter {
         left,
         right,
         up,
-        down
+        down,
+        none
     }
 
 }
