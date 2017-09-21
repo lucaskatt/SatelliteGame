@@ -9,7 +9,6 @@ public class Satellite : Matter {
     public float thrusterIncrement;
 
     private bool isThrusting = false;
-    private float currentIncrement = 0;
     private Direction lastDir = Direction.right;
 
 	// Use this for initialization
@@ -87,12 +86,9 @@ public class Satellite : Matter {
         if (!isThrusting)
         {
             body.velocity = heading * thrusterInitialVel;
-            currentIncrement = 0;
         }
         else
         {
-            //currentIncrement += thrusterIncrement;
-            //body.velocity = heading * thrusterInitialVel + heading * currentIncrement;
             body.velocity = body.velocity.magnitude * heading + heading * thrusterIncrement;
         }
     }

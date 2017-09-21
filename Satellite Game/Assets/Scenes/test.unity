@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 677228700}
   - component: {fileID: 677228699}
   - component: {fileID: 677228698}
+  - component: {fileID: 677228701}
   m_Layer: 0
   m_Name: planet
   m_TagString: Untagged
@@ -197,6 +198,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &677228701
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 677228697}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.27
 --- !u!1 &727972010
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +315,139 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satellite: {fileID: 479783191}
+--- !u!1 &892640570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 892640572}
+  - component: {fileID: 892640571}
+  m_Layer: 0
+  m_Name: destroyZone
+  m_TagString: DestroyZone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!58 &892640571
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892640570}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 22
+--- !u!4 &892640572
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892640570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1633646475
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4490196375400422, guid: 5980baa23d7f77743854e722c8a590d8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490196375400422, guid: 5980baa23d7f77743854e722c8a590d8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490196375400422, guid: 5980baa23d7f77743854e722c8a590d8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490196375400422, guid: 5980baa23d7f77743854e722c8a590d8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490196375400422, guid: 5980baa23d7f77743854e722c8a590d8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490196375400422, guid: 5980baa23d7f77743854e722c8a590d8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490196375400422, guid: 5980baa23d7f77743854e722c8a590d8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490196375400422, guid: 5980baa23d7f77743854e722c8a590d8, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5980baa23d7f77743854e722c8a590d8, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1735835650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1312748014917778, guid: 5980baa23d7f77743854e722c8a590d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1633646475}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1735835652}
+  - component: {fileID: 1735835651}
+  m_Layer: 0
+  m_Name: noGravZone
+  m_TagString: NoGravZone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!58 &1735835651
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 58373906981215642, guid: 5980baa23d7f77743854e722c8a590d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1633646475}
+  m_GameObject: {fileID: 1735835650}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3
+--- !u!4 &1735835652
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4490196375400422, guid: 5980baa23d7f77743854e722c8a590d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1633646475}
+  m_GameObject: {fileID: 1735835650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1813973945
 Prefab:
   m_ObjectHideFlags: 0
@@ -356,7 +505,7 @@ GameObject:
   - component: {fileID: 1994158697}
   - component: {fileID: 1994158696}
   m_Layer: 0
-  m_Name: beltBuilder
+  m_Name: roidManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,10 +523,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beltroid: {fileID: 114831035435579056, guid: ac0c8bedbeaa8f949b82cbc7ff6f4dac, type: 2}
-  numRoids: 30
   planet: {fileID: 677228698}
+  asteroid: {fileID: 114498439438257398, guid: b3a3985690276774ead22ea818b185a7, type: 2}
+  numRoids: 30
   radius: 13
-  maxVariance: 5
+  maxBeltPosVariance: 5
+  minAsteroidTargetDist: 10
+  scaleVarianceIncrement: 0.05
+  velVarianceIncrement: 0.05
+  asteroidVel: 2
+  asteroidFrequency: 1
 --- !u!4 &1994158697
 Transform:
   m_ObjectHideFlags: 0
@@ -385,7 +540,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1994158695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56702733, y: 1.2648981, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

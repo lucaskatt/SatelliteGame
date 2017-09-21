@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - NoGravZone
+  - DestroyZone
+  - Asteroid
+  - Planet
   layers:
   - Default
   - TransparentFX
@@ -13,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Beltroids
+  - Asteroids
   - 
   - 
   - 
@@ -40,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Asteroids
+    uniqueID: 2812529237
+    locked: 0
+  - name: Beltroids
+    uniqueID: 428499537
     locked: 0
