@@ -125,9 +125,9 @@ GameObject:
   - component: {fileID: 677228699}
   - component: {fileID: 677228698}
   - component: {fileID: 677228701}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: planet
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,8 +173,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1964312765
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a6166910e1cadc4499dba1f4054adcc0, type: 3}
   m_Color: {r: 0, g: 0.9705882, b: 0.44847876, a: 1}
@@ -457,11 +457,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4553856083889560, guid: 84519171046318640bd063402de78313, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4553856083889560, guid: 84519171046318640bd063402de78313, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4553856083889560, guid: 84519171046318640bd063402de78313, type: 2}
       propertyPath: m_LocalPosition.z
@@ -492,6 +492,10 @@ Prefab:
       propertyPath: planet
       value: 
       objectReference: {fileID: 677228698}
+    - target: {fileID: 1526435596863454, guid: 84519171046318640bd063402de78313, type: 2}
+      propertyPath: m_TagString
+      value: Satellite
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84519171046318640bd063402de78313, type: 2}
   m_IsPrefabParent: 0
@@ -591,8 +595,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 957750899
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af8f258311dff354da8c2459f717e3b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -610,7 +614,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046616217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

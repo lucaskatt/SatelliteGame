@@ -91,6 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planet: {fileID: 0}
   gravConst: 0.01
+  explosion: {fileID: 114065555341982854, guid: 149f4655f18a4c34b810ef49bedfc676,
+    type: 2}
 --- !u!212 &212006292217847584
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -121,7 +123,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1482438059
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a6166910e1cadc4499dba1f4054adcc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Asteroid : Matter {
 
+    public Explosion explosion;
+
     private bool useGravity = true;
 
 	// Use this for initialization
@@ -43,9 +45,8 @@ public class Asteroid : Matter {
 
         if (collision.tag == "DestroyZone")
         {
-            Destroy(gameObject);
+            Explode();
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,6 +55,19 @@ public class Asteroid : Matter {
         {
             useGravity = false;
         }
-        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Asteroid" && collision.rigidbody.velocity.magnitude > GetComponent<Rigidbody2D>().velocity.magnitude)
+        {
+            Explode();
+        }
+    }
+
+    public void Explode()
+    {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

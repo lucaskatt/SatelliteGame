@@ -93,6 +93,11 @@ public class Satellite : Matter {
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //end game
+    }
+
     public enum Direction
     {
         left,
